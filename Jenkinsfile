@@ -33,10 +33,10 @@ pipeline {
           }
         stage('Uploading artifacts to Ansible'){
             steps{
-                   //withCredentials([string(credentialsId: 'ANSADMIN_PASSWORD', variable: 'ansadmin_password')]){
-    // sh 'sshpass -p ${ansadmin_password} ssh -v -o StrictHostKeyChecking=no ansadmin@172.31.36.158 \"cd /etc/ansible/playbooks/target; wget -O sfinder-0.0.1-SNAPSHOT.war http://18.217.190.140:8080/var/lib/jenkins/workspace/springboot-finder/target/sfinder-0.0.1-SNAPSHOT.war \"' 
- withCredentials([string(credentialsId: 'ansible', passwordVariable: 'pass', usernameVariable: 'userId')]) {
-                sh 'curl -v -F file=@target/sfinder-0.0.1-SNAPSHOT.war -u ${userid}:${pass} ansadmin@172.31.36.158/etc/ansible/playbooks/target/sfinder-0.0.1-SNAPSHOT.war'
+                   withCredentials([string(credentialsId: 'ANSADMIN_PASSWORD', variable: 'ansadmin_password')]){
+     sh 'sshpass -p ${ansadmin_password} ssh -v -o StrictHostKeyChecking=no ansadmin@172.31.36.158 \"cd /home/ansadmin/etc/ansible/playbooks/target; wget -O sfinder-0.0.1-SNAPSHOT.war http://18.217.190.140:8080/var/lib/jenkins/workspace/springboot-finder/target/sfinder-0.0.1-SNAPSHOT.war \"' 
+ //withCredentials([string(credentialsId: 'ansible', passwordVariable: 'pass', usernameVariable: 'userId')]) {
+             //   sh 'curl -v -F file=@target/sfinder-0.0.1-SNAPSHOT.war -u ${userid}:${pass} ansadmin@172.31.36.158/etc/ansible/playbooks/target/sfinder-0.0.1-SNAPSHOT.war'
                    }
 }
         }
