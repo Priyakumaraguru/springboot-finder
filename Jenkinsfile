@@ -62,13 +62,6 @@ pipeline {
                 }
             }
         }
-   /*stage('deploy')
-              {
-                  steps
-                  {
-                      deploy adapters: [tomcat9(credentialsId: '7bba93f5-d5bd-427e-b462-f3c552dad961', path: '', url: 'http://3.23.20.194:8090/')], contextPath: '/finder', war: '**/*.war'
-                      //deploy adapters: [tomcat9(credentialsId: '7bba93f5-d5bd-427e-b462-f3c552dad961', path: '', url: 'http://52.14.6.176:8090/')], contextPath: '/cur', war: '**/*.war'
-                  }  
-              } */
+   
 }
 }
