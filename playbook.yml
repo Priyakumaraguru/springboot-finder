@@ -1,0 +1,9 @@
+---
+- hosts: web-servers
+  become: true
+  tasks:
+    - name: Copy war onto tomcat server
+      copy:
+            src: /opt/playbooks/target/BMI.war
+            dest: /root/opt/apache-tomcat-8.5.47/webapps
+...
