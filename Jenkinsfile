@@ -47,7 +47,7 @@ pipeline {
             steps{
                  withCredentials([usernamePassword(credentialsId: 'ansible', passwordVariable: 'pass', usernameVariable: 'userId')]) {
                 //sshPublisher(publishers: [sshPublisherDesc(configName: 'Ansible_server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//opt//playbooks', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'project-ansible.yml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])   
-                sh 'sshpass -p ${pass} scp -v playbook.yml ansadmin@172.31.36.158:/etc/ansible/playbooks'
+                sh 'sshpass -p ${pass} scp -v playbook.yml ansadmin@172.31.36.158:~/etc/ansible/playbooks/'
                       //sh 'sshpass -p ${pass} scp -o StrictHostKeyChecking=no target/*.war ansadmin@172.31.36.158:~/target/'
 
                 }
