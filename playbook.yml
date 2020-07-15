@@ -5,5 +5,5 @@
     - name: Copy war onto tomcat server
       copy:
             src: /home/ansadmin/target/sfinder-0.0.1-SNAPSHOT.war
-            dest: /root/opt/apache-tomcat-8.5.47/webapps
+            dest: /opt/apache-tomcat-8.5.47/webapps
 ...
