@@ -13,7 +13,7 @@ pipeline {
                  }
             }
         
-    /* stage('SonarQube analysis'){ 
+     stage('SonarQube analysis'){ 
         environment{
                scannerHome = tool 'Sonar'
                    }
@@ -30,7 +30,7 @@ pipeline {
                 waitForQualityGate abortPipeline: true
               }
             }
-          }*/
+          }
         
        stage('Uploading artifacts to Ansible'){
             steps{
