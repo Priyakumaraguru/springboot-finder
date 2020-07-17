@@ -62,8 +62,8 @@ pipeline {
      post { 
                 success { 
                     echo 'notified to slack '
-                    slackSend baseUrl: 'https://app.slack.com/client/T017YS8PQKA/C01797LNLLT/', channel: '#ck', color: '#00FF00', message: 'JOB SUCCESSFUL', teamDomain: 'wipro-3uq8007', tokenCredentialId: 'slack1'
-                    //slackSend (color: '#00FF00', message: " JOB SUCCESSFUL: Job '${JOB_NAME} [${BUILD_NUMBER}]'")
+                    //slackSend baseUrl: 'https://app.slack.com/client/T017YS8PQKA/C01797LNLLT/', channel: '#ck', color: '#00FF00', message: 'JOB SUCCESSFUL', teamDomain: 'wipro-3uq8007', tokenCredentialId: 'slack1'
+                    slackSend (color: '#00FF00', message: " JOB SUCCESSFUL: Job '${JOB_NAME} [${BUILD_NUMBER}]'")
      // slackSend channel: '#ck', color: '#00FF00', message: 'JOB SUCCESSFUL: Job \'${JOB_NAME} [${BUILD_NUMBER}]', teamDomain: 'wipro', tokenCredentialId: 'slack1'               
                 }
                 failure {
