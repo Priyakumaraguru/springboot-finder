@@ -13,7 +13,7 @@ pipeline {
                  }
             }
         
-    /* stage('SonarQube analysis'){ 
+     stage('SonarQube analysis'){ 
         environment{
                scannerHome = tool 'Sonar'
                    }
@@ -55,7 +55,7 @@ pipeline {
                     sh 'sshpass -p ${pass} ssh -v -o StrictHostKeyChecking=no ansadmin@172.31.36.158 \"ansible-playbook /home/ansadmin/playbooks/playbook.yml\"'
                 }
             }
-        }*/
+        }
        
    
 }
